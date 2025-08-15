@@ -1,1 +1,1 @@
-// TODO: (Re-)Export public API
+export * from "./config";
