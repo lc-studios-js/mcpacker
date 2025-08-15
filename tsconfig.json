@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "preserve",
+		"moduleResolution": "bundler",
+		"moduleDetection": "force",
+		"target": "es2023",
+		"lib": ["es2023"],
+		"types": ["node"],
+		"verbatimModuleSyntax": true,
+		"isolatedModules": true,
+		"noUncheckedSideEffectImports": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+
+		// Strictness
+		"strict": true,
+		"noUncheckedIndexedAccess": true,
+		"noImplicitOverride": true,
+		"exactOptionalPropertyTypes": false
+	},
+	"exclude": ["node_modules", "dist", "__mocks__"]
+}

@@ -1,0 +1,40 @@
+{
+	"name": "@lc-studios-js/mcpacker",
+	"version": "0.0.0",
+	"private": true,
+	"files": [
+		"./dist"
+	],
+	"type": "module",
+	"bin": {
+		"mcpacker": "./dist/cli.js"
+	},
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "tsc",
+		"prepack": "npm run build",
+		"build": "tsup",
+		"build:watch": "tsup --watch",
+		"clean": "shx rm -rf dist",
+		"format": "prettier --write ."
+	},
+	"dependencies": {
+		"chokidar": "^4.0.3",
+		"esbuild": "^0.25.9",
+		"fs-extra": "^11"
+	},
+	"devDependencies": {
+		"@types/fs-extra": "^11",
+		"@types/node": "^22",
+		"prettier": "^3.6.2",
+		"shx": "^0.4.0",
+		"tsup": "^8.5.0",
+		"typescript": "^5.9.2"
+	},
+	"engines": {
+		"node": ">= 22"
+	}
+}
