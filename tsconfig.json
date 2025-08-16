@@ -3,6 +3,11 @@
 		"module": "preserve",
 		"moduleResolution": "bundler",
 		"moduleDetection": "force",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@test/*": ["./test/*"]
+		},
 		"target": "es2023",
 		"lib": ["es2023"],
 		"types": ["node"],
