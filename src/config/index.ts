@@ -1,3 +1,5 @@
+import type { CliArgs } from "@/types";
+
 export type BehaviorPackConfig = {
 	type: "behavior";
 	srcDir: string;
@@ -19,13 +21,6 @@ export type BuildConfig = {
 	watch?: boolean;
 };
 
-export type BuildArgs = {
-	bpOutDir?: string;
-	rpOutDir?: string;
-	version?: [number, number, number];
-	watch?: boolean;
-};
-
-export type BuildConfigFunction = (args: BuildArgs) => BuildConfig | Promise<BuildConfig>;
+export type BuildConfigFunction = (args: CliArgs) => BuildConfig | Promise<BuildConfig>;
 
 export const defineConfig = (fn: BuildConfigFunction) => fn;
