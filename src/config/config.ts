@@ -2,18 +2,20 @@ import type { CliArgs } from "@/types";
 
 export type BehaviorPackConfig = {
 	type: "behavior";
-	name?: string;
 	srcDir: string;
 	outDir: string;
 	manifest: string;
+	name?: string;
+	clean?: boolean;
 };
 
 export type ResourcePackConfig = {
 	type: "resource";
-	name?: string;
 	srcDir: string;
 	outDir: string;
 	manifest: string;
+	name?: string;
+	clean?: boolean;
 };
 
 export type PackConfig = BehaviorPackConfig | ResourcePackConfig;
