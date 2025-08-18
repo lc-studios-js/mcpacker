@@ -2,6 +2,7 @@ import type { CliArgs } from "@/types";
 
 export type BehaviorPackConfig = {
 	type: "behavior";
+	name?: string;
 	srcDir: string;
 	outDir: string;
 	manifest: string;
@@ -9,6 +10,7 @@ export type BehaviorPackConfig = {
 
 export type ResourcePackConfig = {
 	type: "resource";
+	name?: string;
 	srcDir: string;
 	outDir: string;
 	manifest: string;
