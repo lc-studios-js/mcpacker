@@ -18,7 +18,7 @@ describe("getPackName()", () => {
 					type: "behavior",
 					srcDir: "",
 					outDir: "",
-					manifest: "",
+					manifest: {},
 				},
 				5,
 			);
@@ -32,7 +32,7 @@ describe("getPackName()", () => {
 					type: "behavior",
 					srcDir: "",
 					outDir: "",
-					manifest: "",
+					manifest: {},
 					name: "MyPack",
 				},
 				69,
