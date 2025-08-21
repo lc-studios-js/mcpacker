@@ -63,6 +63,4 @@ const main = async () => {
 	process.off("SIGINT", onInterrupt);
 };
 
-if (process.argv[1] === fileURLToPath(import.meta.url)) {
-	await main();
-}
+await main();
