@@ -1,9 +1,9 @@
+import type { ScriptConfig } from "@/config";
 import { isFileUrl } from "@/utils/url";
 import * as esbuild from "esbuild";
 import fs from "fs-extra";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import type { ScriptConfig } from "./config";
 
 const createCustomWritePlugin = (sourceRoot: string): esbuild.Plugin => {
 	const onEnd = async (result: esbuild.BuildResult) => {

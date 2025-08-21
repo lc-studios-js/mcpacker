@@ -1,2 +1,2 @@
-export type * from "./build/config";
+export * from "./config";
 export { build } from "./build/entry";

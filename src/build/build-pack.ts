@@ -1,3 +1,4 @@
+import type { PackConfig } from "@/config";
 import { debounce } from "@/utils/debounce";
 import { testInclusion } from "@/utils/matching";
 import chalk from "chalk";
@@ -8,7 +9,6 @@ import JSON5 from "json5";
 import path from "node:path";
 import yaml from "yaml";
 import { bundleScripts } from "./bundle-scripts";
-import type { PackConfig } from "./config";
 
 const SCRIPT_FILE_EXTENSIONS = new Set<string>([".js", ".cjs", ".mjs", ".ts", ".cts", ".mts"]);
 const YAML_EXTENSIONS = new Set<string>([".yaml", ".yml"]);

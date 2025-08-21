@@ -1,6 +1,6 @@
+import type { BuildConfig } from "@/config";
 import chalk from "chalk";
 import { buildPack } from "./build-pack";
-import type { BuildConfig } from "./config";
 
 export const build = async (config: BuildConfig, signal?: AbortSignal): Promise<void> => {
 	signal?.throwIfAborted();
