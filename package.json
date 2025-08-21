@@ -1,6 +1,6 @@
 {
 	"name": "@lc-studios-js/mcpacker",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "A Minecraft Bedrock addon compiler",
 	"license": "MIT",
 	"repository": {
