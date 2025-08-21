@@ -1,1 +1,2 @@
-// TODO: (Re-)Export public API
+export type * from "./build/config";
+export { build } from "./build/entry";
