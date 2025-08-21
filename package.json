@@ -7,6 +7,27 @@
 		"type": "git",
 		"url": "git+https://github.com/lc-studios-js/mcpacker.git"
 	},
+	"keywords": [
+		"minecraft",
+		"mcaddon",
+		"mcpack",
+		"addon",
+		"pack",
+		"compile",
+		"compiler",
+		"sync",
+		"syncer",
+		"build",
+		"tool",
+		"watch",
+		"cli",
+		"json",
+		"jsonc",
+		"json5",
+		"yaml",
+		"javascript",
+		"typescript"
+	],
 	"files": [
 		"./dist"
 	],
