@@ -7,11 +7,9 @@ import fs from "fs-extra";
 import { glob } from "glob";
 import JSON5 from "json5";
 import path from "node:path";
-import yaml from "yaml";
 import { bundleScripts } from "./bundle-scripts";
 
 const SCRIPT_FILE_EXTENSIONS = new Set<string>([".js", ".cjs", ".mjs", ".ts", ".cts", ".mts"]);
-const YAML_EXTENSIONS = new Set<string>([".yaml", ".yml"]);
 const TEXTURE_LIST_PATH = "textures/texture_list.json";
 const TEXTURES_DIR_PREFIX = "textures/";
 
@@ -45,8 +43,7 @@ const shouldConvertToJson = (ctx: BuildPackContext, srcPath: string): boolean =>
 	const ext = path.extname(srcPath);
 	return !!(
 		(ctx.pack.convertJsoncToJson && ext === ".jsonc") ||
-		(ctx.pack.convertJson5ToJson && ext === ".json5") ||
-		(ctx.pack.convertYamlToJson && YAML_EXTENSIONS.has(ext))
+		(ctx.pack.convertJson5ToJson && ext === ".json5")
 	);
 };
 
@@ -159,8 +156,6 @@ const applyFileChange = async (change: FileChange, ctx: BuildPackContext): Promi
 		(ctx.pack.convertJson5ToJson && ext === ".json5")
 	) {
 		destContent = JSON.stringify(JSON5.parse(srcContent.toString("utf8")), null, 2);
-	} else if (ctx.pack.convertYamlToJson && YAML_EXTENSIONS.has(ext)) {
-		destContent = JSON.stringify(yaml.parse(srcContent.toString("utf8")), null, 2);
 	}
 
 	await fs.outputFile(destPath, destContent);

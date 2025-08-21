@@ -11,7 +11,6 @@ export type BasePackConfig = {
 	clean?: boolean;
 	convertJsoncToJson?: boolean;
 	convertJson5ToJson?: boolean;
-	convertYamlToJson?: boolean;
 	watch?: boolean;
 };
 
