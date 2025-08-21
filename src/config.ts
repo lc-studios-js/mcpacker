@@ -1,4 +1,5 @@
 import type * as esbuild from "esbuild";
+import type { CliArgs } from "./types";
 
 export type BasePackConfig = {
 	name: string;
@@ -38,3 +39,7 @@ export type PackConfig = BehaviorPackConfig | ResourcePackConfig;
 export type BuildConfig = {
 	packs?: PackConfig[];
 };
+
+export type BuildConfigFunction = (args: CliArgs) => BuildConfig | Promise<BuildConfig>;
+
+export const defineConfig = (fn: BuildConfigFunction) => fn;
