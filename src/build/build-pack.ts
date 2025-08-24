@@ -39,19 +39,16 @@ const shouldInclude = (srcPath: string, pack: PackConfig): boolean => {
 	return testInclusion(srcPath, srcDir, pack.include, exclude);
 };
 
-const shouldConvertToJson = (ctx: BuildPackContext, srcPath: string): boolean => {
+const shouldConvertToJson = (srcPath: string): boolean => {
 	const ext = path.extname(srcPath);
-	return !!(
-		(ctx.pack.convertJsoncToJson && ext === ".jsonc") ||
-		(ctx.pack.convertJson5ToJson && ext === ".json5")
-	);
+	return ext === ".jsonc" || ext === ".json5";
 };
 
 const getDestPath = (ctx: BuildPackContext, srcPath: string): string => {
 	const { srcDir, outDir } = ctx;
 	const parsedSrcPath = path.parse(srcPath);
 
-	if (shouldConvertToJson(ctx, srcPath)) {
+	if (shouldConvertToJson(srcPath)) {
 		parsedSrcPath.base = `${parsedSrcPath.name}.json`;
 	}
 
@@ -151,10 +148,7 @@ const applyFileChange = async (change: FileChange, ctx: BuildPackContext): Promi
 	let destContent: Buffer | string = srcContent;
 	const ext = path.extname(change.filePath);
 
-	if (
-		(ctx.pack.convertJsoncToJson && ext === ".jsonc") ||
-		(ctx.pack.convertJson5ToJson && ext === ".json5")
-	) {
+	if (ext === ".jsonc" || ext === ".json5") {
 		destContent = JSON.stringify(JSON5.parse(srcContent.toString("utf8")), null, 2);
 	}
 

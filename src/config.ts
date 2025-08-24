@@ -9,8 +9,6 @@ export type BasePackConfig = {
 	include?: string[];
 	exclude?: string[];
 	clean?: boolean;
-	convertJsoncToJson?: boolean;
-	convertJson5ToJson?: boolean;
 	watch?: boolean;
 };
 
