@@ -2,7 +2,6 @@
 
 import chalk from "chalk";
 import { program } from "commander";
-import { fileURLToPath } from "node:url";
 import packageData from "../package.json" with { type: "json" };
 import { build } from "./build/entry";
 import type { BuildConfig } from "./config";
@@ -16,6 +15,7 @@ const main = async () => {
 		.version(packageData.version)
 		.option("-c, --config <file>", "path to the configuration file", "mcpacker.config.mjs")
 		.option("-w, --watch", "sets property 'watch' in config function args")
+		.option("--dev", "sets property 'dev' in config function args")
 		.option("--packVersion <version>", "sets property 'packVersion' in config function args");
 
 	await program.parseAsync(process.argv);
@@ -36,6 +36,7 @@ const main = async () => {
 	}
 
 	const cliArgsObject: CliArgs = {
+		dev: !!options.dev,
 		packVersion,
 		watch: !!options.watch,
 	};
